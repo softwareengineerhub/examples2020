@@ -1,6 +1,5 @@
 package com.app.ch01;
 
-import com.sun.scenario.effect.impl.state.GaussianRenderState;
 
 public class Main {
 
