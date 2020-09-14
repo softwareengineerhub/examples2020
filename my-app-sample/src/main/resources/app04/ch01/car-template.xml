@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<car>
+    <name type="A" meta="B">%s</name>
+    <age>%s</age>
+</car>
