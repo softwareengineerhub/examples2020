@@ -7,8 +7,9 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-//        runListDemo(DataProcessorType.JSON, "cars.json");
+        runListDemo(DataProcessorType.JSON, "cars.json");
         runListDemo(DataProcessorType.XML_DOM, "cars_dom.xml");
+        runListDemo(DataProcessorType.XML_SAX, "cars_sax.xml");
     }
 
     public static void runListDemo(DataProcessorType dataProcessorType, String filename) {
@@ -21,7 +22,7 @@ public class Main {
         cars.add(new Car("Car4", 34));
 
         DataProcessor dataProcessor = DataProcessorFactory.getDataProcessor(dataProcessorType, file);
-        System.out.println("Demo of " + dataProcessorType);
+        System.out.println("\nDemo of " + dataProcessorType);
 
         System.out.println("-----write----------");
         System.out.println(cars);
