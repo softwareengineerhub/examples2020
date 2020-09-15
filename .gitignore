@@ -4,3 +4,10 @@
 /kolia-preparation/.idea
 /kolia-preparation/target
 /kolia-preparation/kolia-preparation.iml
+/reflaction+classloader/my-simple-lib/target
+/reflaction+classloader/my-simple-lib/.idea
+/reflaction+classloader/my-simple-lib/my-simple-lib.iml
+/reflaction+classloader/my-simple-app/target
+/reflaction+classloader/my-simple-app/dependency-reduced-pom.xml
+/reflaction+classloader/my-simple-app/.idea
+/reflaction+classloader/my-simple-app/my-simple-app.iml
