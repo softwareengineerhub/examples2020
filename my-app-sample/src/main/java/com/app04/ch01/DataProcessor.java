@@ -1,10 +1,14 @@
 package com.app04.ch01;
 
+import java.util.List;
+
 public interface DataProcessor {
 
+    void write(Car car);
 
-    public void write(Car car);
+    void write(List<Car> cars);
 
-    public Car read();
+    Car read();
 
+    List<Car> readBulk();
 }
