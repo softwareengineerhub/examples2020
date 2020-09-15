@@ -53,9 +53,4 @@ public abstract class AbstractXmlDataProcessor implements DataProcessor {
         }
     }
 
-    @Override
-    public List<Car> readBulk() {
-        return null;
-    }
-
 }
