@@ -50,12 +50,6 @@ public class XmlDomDataProcessor extends AbstractXmlDataProcessor{
 
             }
 
-
-
-
-
-
-
             System.out.println("----------------------------");
 
             return car;
@@ -63,4 +57,5 @@ public class XmlDomDataProcessor extends AbstractXmlDataProcessor{
             throw  new RuntimeException(ex);
         }
     }
+
 }
