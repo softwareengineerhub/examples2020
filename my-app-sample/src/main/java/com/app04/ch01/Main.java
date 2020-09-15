@@ -7,8 +7,8 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        runListDemo(DataProcessorType.JSON, "cars.json");
-//        runListDemo(DataProcessorType.XML_DOM, "cars_dom.xml");
+//        runListDemo(DataProcessorType.JSON, "cars.json");
+        runListDemo(DataProcessorType.XML_DOM, "cars_dom.xml");
     }
 
     public static void runListDemo(DataProcessorType dataProcessorType, String filename) {

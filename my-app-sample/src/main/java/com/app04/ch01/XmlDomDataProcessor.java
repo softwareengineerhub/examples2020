@@ -8,8 +8,10 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
-public class XmlDomDataProcessor extends AbstractXmlDataProcessor{
+public class XmlDomDataProcessor extends AbstractXmlDataProcessor {
 
 
     public XmlDomDataProcessor(File file) {
@@ -33,8 +35,8 @@ public class XmlDomDataProcessor extends AbstractXmlDataProcessor{
             System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
             NodeList nList = doc.getElementsByTagName("car");
             int n = nList.getLength();
-            System.out.println("n="+n);
-            for(int i=0;i<n;i++){
+            System.out.println("n=" + n);
+            for (int i = 0; i < n; i++) {
                 Node child = nList.item(i);
                 //NodeList childList = child.getChildNodes();
 
@@ -47,14 +49,47 @@ public class XmlDomDataProcessor extends AbstractXmlDataProcessor{
 
                 }
 
-
             }
 
             System.out.println("----------------------------");
 
             return car;
-        }catch (Exception ex){
-            throw  new RuntimeException(ex);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    @Override
+    public List<Car> readBulk() {
+        try {
+            List<Car> cars = new ArrayList<>();
+
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(file);
+
+            //optional, but recommended
+            //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
+            doc.getDocumentElement().normalize();
+
+            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+            NodeList nList = doc.getElementsByTagName("Car");
+
+            int n = nList.getLength();
+            System.out.println(n + " <Car> detected");
+            for (int i = 0; i < n; i++) {
+                Node child = nList.item(i);
+                if (child.getNodeType() == Node.ELEMENT_NODE) {
+                    Element eElement = (Element) child;
+                    String name = eElement.getElementsByTagName("name").item(0).getTextContent();
+                    String ageStr = eElement.getElementsByTagName("age").item(0).getTextContent();
+                    Car car = new Car(name, Integer.parseInt(ageStr));
+                    cars.add(car);
+                }
+            }
+            return cars;
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
         }
     }
 
