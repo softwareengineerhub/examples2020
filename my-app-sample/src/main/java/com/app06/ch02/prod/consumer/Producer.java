@@ -13,7 +13,7 @@ public class Producer extends Thread {
         while(true){
 
             synchronized (monitor){
-                if(produced){
+                while(produced){
                     try {
                         monitor.wait();
                     } catch (InterruptedException e) {

@@ -12,7 +12,7 @@ public class Consumer extends Thread {
     public void run(){
         while(true){
             synchronized (monitor){
-                if(!producer.isProduced()){
+                while(!producer.isProduced()){
                     try {
                         monitor.wait();
                     } catch (InterruptedException e) {
