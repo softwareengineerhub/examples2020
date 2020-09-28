@@ -11,3 +11,13 @@
 /reflaction+classloader/my-simple-app/dependency-reduced-pom.xml
 /reflaction+classloader/my-simple-app/.idea
 /reflaction+classloader/my-simple-app/my-simple-app.iml
+/net-tcp/tcp-chat-client/target
+/net-tcp/tcp-chat-client/tcp-chat-client.iml
+/net-tcp/tcp-chat-client/.idea
+/net-tcp/tcp-chat-common/.idea
+/net-tcp/tcp-chat-common/target
+/net-tcp/tcp-chat-common/tcp-chat-common.iml
+/net-tcp/tcp-chat-server/.idea
+/net-tcp/tcp-chat-server/target
+/net-tcp/tcp-chat-server/dependency-reduced-pom.xml
+/net-tcp/tcp-chat-server/tcp-chat-server.iml
