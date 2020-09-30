@@ -21,3 +21,9 @@
 /net-tcp/tcp-chat-server/target
 /net-tcp/tcp-chat-server/dependency-reduced-pom.xml
 /net-tcp/tcp-chat-server/tcp-chat-server.iml
+/net-udp/udp-server/target
+/net-udp/udp-server/udp-server.iml
+/net-udp/udp-server/.idea
+/net-udp/udp-client/.idea
+/net-udp/udp-client/target
+/net-udp/udp-client/udp-client.iml
