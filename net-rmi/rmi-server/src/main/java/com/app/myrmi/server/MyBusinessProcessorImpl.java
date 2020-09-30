@@ -3,10 +3,15 @@ package com.app.myrmi.server;
 import com.app.common.BusinessProcessor;
 
 import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
-public class MyBusinessProcessorImpl implements BusinessProcessor, Serializable {
+public class MyBusinessProcessorImpl extends UnicastRemoteObject implements BusinessProcessor, Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    public MyBusinessProcessorImpl() throws RemoteException {
+    }
 
     @Override
     public int add(int a, int b) {

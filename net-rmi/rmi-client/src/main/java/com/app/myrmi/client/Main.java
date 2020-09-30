@@ -19,6 +19,7 @@ public class Main {
         //Remote remoteObject = registry.lookup("businessProcessor");
         //BusinessProcessor businessProcessor = (BusinessProcessor) registry.lookup("businessProcessor");
         MyTest myTest = (MyTest) registry.lookup("//127.0.0.1/myTest");
+        myTest.doAction();
         //businessProcessor.test();
         //int sum = businessProcessor.add(1,2);
         //System.out.println("sum="+sum);
