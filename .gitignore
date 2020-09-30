@@ -27,3 +27,12 @@
 /net-udp/udp-client/.idea
 /net-udp/udp-client/target
 /net-udp/udp-client/udp-client.iml
+/net-rmi/rmi-client/.idea
+/net-rmi/rmi-client/target
+/net-rmi/rmi-client/rmi-client.iml
+/net-rmi/rmi-common/.idea
+/net-rmi/rmi-common/target
+/net-rmi/rmi-common/rmi-common.iml
+/net-rmi/rmi-server/.idea
+/net-rmi/rmi-server/target
+/net-rmi/rmi-server/rmi-server.iml
