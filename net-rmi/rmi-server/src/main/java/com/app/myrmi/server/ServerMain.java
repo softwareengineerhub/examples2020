@@ -9,8 +9,9 @@ public class ServerMain {
     public static void main(String[] args) throws Exception {
 
         Registry registry = LocateRegistry.createRegistry(1099);
-        //registry.rebind("businessProcessor", new MyBusinessProcessorImpl());
-        registry.rebind("//127.0.0.1/myTest", new MyTestImpl());
+        registry.bind("businessProcessor", new MyBusinessProcessorImpl());
+        registry.bind("myTest", new MyTestImpl());
+        registry.bind("personProcessor", new PersonProcessorImpl());
 
 
         //registry.rebind("//127.0.0.1/MyPersonServer", new MyPersonServiceImpl());

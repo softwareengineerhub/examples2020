@@ -1,7 +1,6 @@
 package com.app.myrmi.client;
 
-import com.app.common.BusinessProcessor;
-import com.app.common.MyTest;
+import com.app.common.*;
 
 import java.rmi.RMISecurityManager;
 import java.rmi.Remote;
@@ -17,12 +16,25 @@ public class Main {
 
         //Object remoteObject = registry.lookup("businessProcessor");
         //Remote remoteObject = registry.lookup("businessProcessor");
-        //BusinessProcessor businessProcessor = (BusinessProcessor) registry.lookup("businessProcessor");
-        MyTest myTest = (MyTest) registry.lookup("//127.0.0.1/myTest");
+
+        System.out.println("------TEST-------------");
+        MyTest myTest = (MyTest) registry.lookup("myTest");
         myTest.doAction();
-        //businessProcessor.test();
-        //int sum = businessProcessor.add(1,2);
-        //System.out.println("sum="+sum);
+
+        System.out.println("------BusinessProcessor-------------");
+        BusinessProcessor businessProcessor = (BusinessProcessor) registry.lookup("businessProcessor");
+        int sum = businessProcessor.add(1,2);
+        System.out.println("sum="+sum);
+
+        System.out.println("------PersonProcessor-------------");
+        PersonProcessor personProcessor = (PersonProcessor) registry.lookup("personProcessor");
+        PersonRequest request = new PersonRequest();
+        request.setName("NameA");
+        PersonResponse response = personProcessor.makeAction(request);
+        System.out.println("status="+response.getStatus());
+        System.out.println("date="+response.getDate());
+
+
     }
 
 }
