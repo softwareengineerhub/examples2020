@@ -36,3 +36,15 @@
 /net-rmi/rmi-server/.idea
 /net-rmi/rmi-server/target
 /net-rmi/rmi-server/rmi-server.iml
+/jaxbfromxsd/target/
+/soap-ws-calculator/target
+/soap-ws-calculator/.idea
+/soap-ws-calculator/soap-ws-calculator.iml
+/soap-ws-calculator-client/target
+/soap-ws-calculator-client/.idea
+/soap-ws-calculator-client/soap-ws-calculator-client.iml
+/jaxb-app-sample/.idea
+/jaxb-app-sample/target
+/jaxb-app-sample/jaxb-app-sample.iml
+/jaxb-app-sample/person.xml
+/jaxbfromxsd/.idea
