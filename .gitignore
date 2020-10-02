@@ -48,3 +48,6 @@
 /jaxb-app-sample/jaxb-app-sample.iml
 /jaxb-app-sample/person.xml
 /jaxbfromxsd/.idea
+/my-jdbc-app/target
+/my-jdbc-app/.idea
+/my-jdbc-app/my-jdbc-app.iml
