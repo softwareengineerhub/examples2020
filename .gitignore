@@ -51,3 +51,6 @@
 /my-jdbc-app/target
 /my-jdbc-app/.idea
 /my-jdbc-app/my-jdbc-app.iml
+/WEB-EE7/sample01/com-app-theweb/.idea
+/WEB-EE7/sample01/com-app-theweb/target
+/WEB-EE7/sample01/com-app-theweb/com-app-theweb.iml
