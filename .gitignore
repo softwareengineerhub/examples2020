@@ -51,6 +51,10 @@
 /my-jdbc-app/target
 /my-jdbc-app/.idea
 /my-jdbc-app/my-jdbc-app.iml
+/jaxb-ws-client/jaxb-ws-client.iml
+/jaxb-ws-client/target/
+/jaxb-ws-server/jaxb-ws-server.iml
+/.idea/
 /WEB-EE7/sample01/com-app-theweb/.idea
 /WEB-EE7/sample01/com-app-theweb/target
 /WEB-EE7/sample01/com-app-theweb/com-app-theweb.iml
@@ -63,3 +67,4 @@
 /WEB-EE7/sample04/web-app-auth/.idea
 /WEB-EE7/sample04/web-app-auth/target
 /WEB-EE7/sample04/web-app-auth/web-app-auth.iml
+/WEB-EE7/com-app-webtest/
