@@ -19,6 +19,6 @@ public class LoginCheckerDbImpl implements LoginChecker {
         } catch (NoSuchElementException e) {
             return false;
         }
-        return false;
+        return true;
     }
 }

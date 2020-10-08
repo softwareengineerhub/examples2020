@@ -2,7 +2,13 @@ package com.app.api.user;
 
 import com.app.api.PasswordHashHelper;
 
-import java.sql.*;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.NoSuchElementException;
 
 public class UserDao {
@@ -23,14 +29,30 @@ public class UserDao {
             } else {
                 throw new NoSuchElementException();
             }
-        } catch (SQLException e) {
+        } catch (SQLException | NamingException e) {
             throw new RuntimeException(e);
         }
     }
 
-
-    private Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://192.168.1.250:3306/test_site?useSSL=false", "inna", "inna");
+    /**
+     * in conf/connection.xml:
+     * <p>
+     * <Resource name="jdbc/Database" auth="Container"
+     * type="javax.sql.DataSource"
+     * maxActive="100" maxIdle="30" maxWait="10000"
+     * username="_____"
+     * password="_____"
+     * driverClassName="com.mysql.jdbc.Driver"
+     * url="jdbc:mysql://[host]:3306/test_site"/>
+     *
+     * @return connection to MySQL database for authentication
+     * @throws SQLException
+     * @throws NamingException
+     */
+    private Connection getConnection() throws SQLException, NamingException {
+        InitialContext envContext = new InitialContext();
+        DataSource ds = (DataSource) envContext.lookup("java:comp/env/jdbc/Database");
+        return ds.getConnection();
     }
 
 }
