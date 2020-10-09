@@ -17,10 +17,10 @@
     <Realm className="org.apache.catalina.realm.DataSourceRealm"
            dataSourceName="myDS"
            localDataSource="true"
-           userTable="users"
+           userTable="user_role"
            userNameCol="login"
            userCredCol="pass"
-           userRoleTable="users"
+           userRoleTable="user_role"
            roleNameCol="role"
 
     />
