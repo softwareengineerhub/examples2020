@@ -18,8 +18,8 @@
            dataSourceName="myDS"
            localDataSource="true"
            userTable="user_role"
-           userNameCol="login"
-           userCredCol="pass"
+           userNameCol="username"
+           userCredCol="password"
            userRoleTable="user_role"
            roleNameCol="role"
 
