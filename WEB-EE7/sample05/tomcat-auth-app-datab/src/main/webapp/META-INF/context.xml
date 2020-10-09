@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Context>
+
+    <!--<Resource
+            name="myDS"
+            auth="Container"
+            type="javax.sql.DataSource"
+            maxActive="100"
+            maxIdle="30"
+            maxWait="10000"
+            driverClassName = "com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost:3306/terminator?autoReconnect=true"
+            username="root"
+            password="11111111" />-->
+
+    <Realm className="org.apache.catalina.realm.DataSourceRealm"
+           dataSourceName="myDS"
+           localDataSource="true"
+           userTable="users"
+           userNameCol="login"
+           userCredCol="pass"
+           userRoleTable="users"
+           roleNameCol="role"
+
+    />
+
+
+</Context>

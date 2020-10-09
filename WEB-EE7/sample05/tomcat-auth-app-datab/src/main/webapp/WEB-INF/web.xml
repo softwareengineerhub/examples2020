@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+
+    <security-constraint>
+        <display-name>UserConstraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>userResource</web-resource-name>
+            <description/>
+            <url-pattern>/userServlet</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>myuser</role-name>0
+        </auth-constraint>
+    </security-constraint>
+
+
+    <security-constraint>
+        <display-name>AdminConstraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>adminResource</web-resource-name>
+            <description/>
+            <url-pattern>/adminServlet</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>myadmin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+
+    <security-constraint>
+        <display-name>CommonConstraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>commonResource</web-resource-name>
+            <description/>
+            <url-pattern>/commonServlet</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>myuser</role-name>
+            <role-name>myadmin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+
+        <!--<auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.html</form-login-page>
+            <form-error-page>/error-login.html</form-error-page>
+        </form-login-config>-->
+
+    </login-config>
+
+
+    <security-role>
+        <description/>
+        <role-name>myuser</role-name>
+    </security-role>
+    <security-role>
+        <description/>
+        <role-name>myadmin</role-name>
+    </security-role>
+
+</web-app>
