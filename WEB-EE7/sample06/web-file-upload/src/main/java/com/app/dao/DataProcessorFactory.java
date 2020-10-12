@@ -13,13 +13,14 @@ public class DataProcessorFactory {
         if ("csv".equalsIgnoreCase(type)) {
             return new CsvDataProcessor();
         }
-        if ("xls".equalsIgnoreCase(type)) {
+        if ("xls".equalsIgnoreCase(type) ||
+                "xlsx".equalsIgnoreCase(type)) {
             return new XlsDataProcessor();
         }
         if ("properties".equalsIgnoreCase(type)) {
             return new PropertiesDataProcessor();
         }
 
-        throw new IllegalArgumentException("No dataProcessor defined for type="+type);
+        throw new IllegalArgumentException("No dataProcessor defined for type=" + type);
     }
 }

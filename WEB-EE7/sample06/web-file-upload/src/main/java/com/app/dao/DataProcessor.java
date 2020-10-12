@@ -4,5 +4,5 @@ import javax.servlet.http.Part;
 
 public interface DataProcessor {
 
-    public void process(Part part);
+    public int process(Part part);
 }

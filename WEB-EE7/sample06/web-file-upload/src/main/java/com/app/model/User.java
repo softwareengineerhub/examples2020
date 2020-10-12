@@ -3,12 +3,12 @@ package com.app.model;
 public class User {
     private String name;
     private String role;
-    private String pasword;
+    private String password;
 
-    public User(String name, String role, String pasword) {
+    public User(String name, String role, String password) {
         this.name = name;
         this.role = role;
-        this.pasword = pasword;
+        this.password = password;
     }
 
     public User() {
@@ -30,11 +30,11 @@ public class User {
         this.role = role;
     }
 
-    public String getPasword() {
-        return pasword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasword(String pasword) {
-        this.pasword = pasword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

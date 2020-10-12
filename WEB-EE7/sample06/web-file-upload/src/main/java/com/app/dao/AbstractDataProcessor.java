@@ -15,7 +15,7 @@ import java.util.List;
 public abstract class AbstractDataProcessor implements DataProcessor {
 
     @Resource(name = "myDS")
-    private DataSource ds;
+    private final DataSource ds;
 
     public AbstractDataProcessor() {
         try {
@@ -27,10 +27,10 @@ public abstract class AbstractDataProcessor implements DataProcessor {
     }
 
     @Override
-    public void process(Part part) {
+    public int process(Part part) {
         try {
             List<User> users = parse(part.getInputStream());
-            insertAll(users);
+            return insertAll(users);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -38,19 +38,19 @@ public abstract class AbstractDataProcessor implements DataProcessor {
 
     protected abstract List<User> parse(InputStream in);
 
-    private void insertAll(List<User> users) {
+    private int insertAll(List<User> users) {
         try (Connection c = ds.getConnection()) {
             c.setAutoCommit(false);
             String sql = "INSERT INTO user_role (username, password, role)  VALUES(?,?,?)";
-            PreparedStatement ps = null;
+            PreparedStatement ps = c.prepareStatement(sql);
             for (User user : users) {
-                ps = c.prepareStatement(sql);
                 ps.setObject(1, user.getName());
-                ps.setObject(2, user.getPasword());
+                ps.setObject(2, user.getPassword());
                 ps.setObject(3, user.getRole());
                 ps.execute();
             }
             c.commit();
+            return users.size();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

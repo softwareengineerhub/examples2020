@@ -3,6 +3,7 @@ package com.app.api;
 import com.app.dao.DataProcessor;
 import com.app.dao.DataProcessorFactory;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -28,23 +29,20 @@ public class UploadServlet extends HttpServlet {
         String type = getType(submittedFileName);
         System.out.println("type=" + type);
         DataProcessor dp = DataProcessorFactory.dataProcessor(type);
-        dp.process(part);
+        int processedUsers = dp.process(part);
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/successServlet");
+        req.setAttribute("processedUsers", processedUsers);
+        requestDispatcher.forward(req, resp);
     }
 
 
     private String getType(String submittedFileName) {
         System.out.println("##############################");
-        System.out.println("submittedFileName="+submittedFileName);
+        System.out.println("submittedFileName=" + submittedFileName);
         int index = submittedFileName.lastIndexOf(".");
-        String type = submittedFileName.substring(index+1, submittedFileName.length());
-        System.out.println("type="+type);
+        String type = submittedFileName.substring(index + 1, submittedFileName.length());
+        System.out.println("type=" + type);
         return type;
     }
-
-    /*private String getType(String contentType) {
-        String[] array = contentType.split("/");
-        return array[array.length - 1];
-    }*/
-
 
 }

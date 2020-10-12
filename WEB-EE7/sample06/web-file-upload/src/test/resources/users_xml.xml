@@ -1,0 +1,16 @@
+<Users>
+    <User>
+        <name>"xml_user1"</name>
+        <role>"xml_role1"</role>
+        <password>"ksjdghlkdfjhgkdf"</password>
+    </User>
+    <User>
+        <name>"xml_user2"</name>
+        <role>"xml_role2"</role>
+        <password>"KDSJFHKJHKJHKJH"</password>
+    </User>
+    <User>
+        <name>"xml_user3"</name>
+        <password>"KDSJFH"</password>
+    </User>
+</Users>
