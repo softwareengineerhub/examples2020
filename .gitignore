@@ -1,3 +1,6 @@
+.idea/
+*.iml
+target/
 /my-app-sample/target
 /my-app-sample/.idea
 /my-app-sample/my-app-sample.iml
