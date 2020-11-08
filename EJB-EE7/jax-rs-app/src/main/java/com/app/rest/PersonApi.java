@@ -5,6 +5,7 @@ import com.app.bean.PersonDaoImpl2;
 import com.app.domen.Person;
 
 import javax.ejb.EJB;
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import java.util.List;
 
@@ -15,7 +16,9 @@ public class PersonApi {
     private PersonDao personDao;
 
     @POST
-    public void create(Person person) {
+    public void create(@Valid Person person) {
+        System.out.println(person);
+
         personDao.create(person);
     }
 

@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Stateless;
 import javax.sql.DataSource;
+import javax.validation.Valid;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

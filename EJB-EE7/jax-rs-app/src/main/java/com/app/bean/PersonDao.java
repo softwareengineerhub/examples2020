@@ -3,6 +3,7 @@ package com.app.bean;
 
 import com.app.domen.Person;
 
+import javax.validation.Valid;
 import java.util.List;
 
 public interface PersonDao {
