@@ -11,10 +11,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Stateless
+@Stateless
 public class PersonDaoImpl implements PersonDao {
-    //@Resource(name = "qqq")
-    private DataSource ds = new MyDataSource();
+    @Resource(name = "myDs")
+    private DataSource ds;
 
     @Override
     public void create(Person person) {

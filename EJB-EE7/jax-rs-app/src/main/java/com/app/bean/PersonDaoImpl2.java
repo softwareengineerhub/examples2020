@@ -13,7 +13,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-@Singleton
+//@Singleton
+//@Stateless
 public class PersonDaoImpl2 implements PersonDao {
     private List<Person> persons;
 
