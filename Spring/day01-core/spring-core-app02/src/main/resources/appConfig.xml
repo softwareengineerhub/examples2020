@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+">
+
+    <bean class="com.app.dao.DaoImpl" id="dao" init-method="init" destroy-method="destroy"/>
+
+    <bean class="com.app.service.PersonService" id="personService" scope="singleton">
+        <property name="dao" ref="dao"/>
+    </bean>
+
+    <bean class="com.app.processor.DataProcessor" id="dataProcessor" scope="prototype">
+        <property name="personService" ref="personService"/>
+    </bean>
+
+
+    <bean class="com.app.model.Person" id="personA" init-method="init" destroy-method="destroy" lazy-init="true"/>
+    <bean class="com.app.model.Person" id="personB" init-method="init" destroy-method="destroy"/>
+
+
+
+</beans>
