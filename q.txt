@@ -1,0 +1,43 @@
+1) факториал
+2) фибоначчи
+3) Bubble Sort
+4) Selection Sort
+5) Insertion Sort
+6) Merge sort
+7) Binary search
+8) Merge 2 sorted arrays
+9) Полиндром
+10) Анограмма
+11) Удалить дубликаты из массива
+12) Найти общее 2 массивов
+13) Развернуть лист
+14) Развернуть строку
+15) Развернуть число
+16) Посчитатать сумму цифр числа
+17) Реализовать LinkedList (1, 2 связный)
+size, isEmpty, get(int index), set, add, remove
+18) Реализовать стек 
+Через массив и через LinkedList
+19) Реализовать queue (массив)
+20) Можно ли из заданого массив составить нужную сумму ?
+(int[] a, int target)
+21) поисковик - найти файлы по расширению
+22) реализовать BinaryTree
+23) Реализовать hashMap
+size, isEmpty, put, get
+24) Реализовать Stack as 2 queues
+25) Найти 2 max
+26) Найти max встречающееся слово в тексте.
+Через java8 stream
+27) LRU cache
+28) Double Check Singleton
+29) Выполнить 10 задач через Executor и собрать их результат
+30) Написать L на java8.
+
+31) Spring - proxy types
+CGLIB
+JDK dynamic
+
+32) Как в singleton инжектировать Prototype
+
+
