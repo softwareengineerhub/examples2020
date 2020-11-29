@@ -1,0 +1,31 @@
+1. Rest
+Различия между HTTP metods
+Safety
+Idenpotency
+Benefits of WebServices (soap and rest) - cross language support; cross format
+SOAP - wsdl (Описание сервиса)
+REST - либо создавать документацию, либо использовать Swagger (OpenAPI)
+
+2. Docker vs Virual Machine
+
+
+3. SOLID
+4. SDLC
+5. Linux commands
+grep;
+kill;
+htop;
+iptable;
+
+6. Testing
+- UNIT
+- Integration
+- Load 
+- Performnace
+- eye to eye
+- TDD
+- BDD
+
+7. Clouds
+AWS: S3, EC2, lambda
+

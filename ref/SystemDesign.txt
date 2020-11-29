@@ -1,0 +1,20 @@
+1. System design
+https://www.educative.io/courses/grokking-the-system-design-interview/gx7wZzWn5Vj
+
+2. CQRS+Event Sourcing
+https://www.youtube.com/watch?v=A0goyZ9F4bg
+
+3. JTA\2phase commit
+Saga pattern (for microservices)
+//TODO:
+
+
+4. DDD (Domain Driven Design)
+https://www.youtube.com/watch?v=CR9mLGN9jh0
+
+5. Reactive manifest
+https://www.reactivemanifesto.org/
+1) Event Driven
+
+6. Cassandra
+https://academy.datastax.com/#/online-courses/0da20519-364d-47a9-9916-b59c02175393
