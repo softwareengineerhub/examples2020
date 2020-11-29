@@ -29,3 +29,5 @@ iptable;
 7. Clouds
 AWS: S3, EC2, lambda
 
+8. SSL\TLS
+ssl handshake
