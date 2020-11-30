@@ -7,7 +7,7 @@ https://www.youtube.com/watch?v=A0goyZ9F4bg
 3. JTA\2phase commit
 Saga pattern (for microservices)
 //TODO:
-
+https://www.youtube.com/watch?v=2H_Lmbvirqs
 
 4. DDD (Domain Driven Design)
 https://www.youtube.com/watch?v=CR9mLGN9jh0
