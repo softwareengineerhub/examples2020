@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class WordsTest {
 
-    Words words = new Words();
+    final Words words = new Words();
 
     @Test
     public void palindromeCheckLoop() {

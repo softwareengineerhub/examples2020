@@ -2,8 +2,7 @@ package com.example;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.NoSuchElementException;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -13,11 +12,11 @@ import static org.junit.Assert.*;
 public class SortExTest {
 
     public static final int STREAM_SIZE = 1_000_000;
-    SortEx<Integer> sortEx = new SortEx<>();
+    final SortEx<Integer> sortEx = new SortEx<>();
+    final ThreadLocalRandom random = ThreadLocalRandom.current();
 
     @Test
     public void searchRandomElementInSortedArray() {
-        ThreadLocalRandom random = ThreadLocalRandom.current();
         IntStream a = random.ints(STREAM_SIZE).distinct().sorted();
         Integer[] sorted = a.boxed().toArray(Integer[]::new);
         IntStream.range(0, 1_000_000).map(i -> random.nextInt(sorted.length-1)).forEach(correctIndex -> {
@@ -32,7 +31,6 @@ public class SortExTest {
 
     @Test
     public void searchEveryElementInSortedArray() {
-        ThreadLocalRandom random = ThreadLocalRandom.current();
         IntStream a = random.ints(STREAM_SIZE).distinct().sorted();
         Integer[] sorted = a.boxed().toArray(Integer[]::new);
         IntStream.range(0, sorted.length).forEach(correctIndex -> {
@@ -62,7 +60,6 @@ public class SortExTest {
         Integer[] b = {0,9,8,7,6,5,4,3,2,1};
         assertArrayEquals(sorted, sortEx.selectionSort(b));
 
-        ThreadLocalRandom random = ThreadLocalRandom.current();
         Integer[] c = random.ints().boxed().limit(100).toArray(Integer[]::new);
         Integer[] d = sortEx.selectionSort(c);
         Arrays.sort(c);
@@ -76,19 +73,45 @@ public class SortExTest {
         int[] c = sortEx.mergeArrays(a, b);
         int[] sorted = Stream.concat(Arrays.stream(a).boxed(), Arrays.stream(b).boxed())
                 .sorted().mapToInt(i -> i).toArray();
-        System.out.println(Arrays.toString(c));
+        assertArrayEquals(c, sorted);
+    }
+
+    @Test
+    public void mergeSortedSmallArrays() {
+        int[] a = {13, 15};
+        int[] b = {45};
+        int[] c = sortEx.mergeArrays(b, a);
+        int[] sorted = Stream.concat(Arrays.stream(a).boxed(), Arrays.stream(b).boxed())
+                .sorted().mapToInt(i -> i).toArray();
         assertArrayEquals(c, sorted);
     }
 
     @Test
     public void mergeRandomSortedArrays() {
-        ThreadLocalRandom random = ThreadLocalRandom.current();
         int[] a = random.ints(100).sorted().toArray();
         int[] b = random.ints(100).sorted().toArray();
         int[] c = sortEx.mergeArrays(a, b);
         int[] sorted = Stream.concat(Arrays.stream(a).boxed(), Arrays.stream(b).boxed())
                 .sorted().mapToInt(i -> i).toArray();
         assertArrayEquals(c, sorted);
+    }
+
+    @Test
+    public void testMergeSort() {
+        int[] a = {13,5,4,23,87,44,12,9,76};
+        int[] c = sortEx.mergeSort(a);
+        int[] sorted = Arrays.stream(a).boxed().sorted().mapToInt(i -> i).toArray();
+        assertArrayEquals(c, sorted);
+    }
+
+    @Test
+    public void testMergeSortRandom() {
+        for (int i = 0; i < 100; i++) {
+            int arraySize = random.nextInt(10000);
+            int[] a = random.ints(arraySize).toArray();
+            int[] sorted = Arrays.stream(a).sorted().toArray();
+            assertArrayEquals(sortEx.mergeSort(a), sorted);
+        }
     }
 
 }

@@ -2,16 +2,11 @@ package com.example;
 
 import org.junit.Test;
 
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static org.junit.Assert.*;
 
 public class MyListTest {
-
-    @Test
-    public void size() {
-    }
 
     @Test
     public void add() {

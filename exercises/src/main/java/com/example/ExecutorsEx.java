@@ -9,9 +9,9 @@ public class ExecutorsEx {
     //сложить числа в несколько потоков
     private static class Calc implements Callable<Double> {
 
-        double[] a;
-        int firstIndex;
-        int lastIndex;
+        final double[] a;
+        final int firstIndex;
+        final int lastIndex;
 
         public Calc(double[] a, int firstIndex, int lastIndex) {
             this.a = a;

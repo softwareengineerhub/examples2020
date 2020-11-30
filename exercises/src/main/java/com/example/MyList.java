@@ -1,8 +1,5 @@
 package com.example;
 
-import java.util.LinkedList;
-import java.util.NoSuchElementException;
-
 public class MyList<T> {
 
     private static class Node<T> {

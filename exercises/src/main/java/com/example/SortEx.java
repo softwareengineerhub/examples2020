@@ -1,5 +1,6 @@
 package com.example;
 
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class SortEx<T extends Comparable<T>> {
@@ -14,9 +15,12 @@ public class SortEx<T extends Comparable<T>> {
         int[] c = new int[a.length + b.length];
         int indexA = 0;
         int indexB = 0;
-        int indexC = 0;
-        while (indexC < c.length)
-            c[indexC++] = (indexA < a.length && a[indexA] < b[indexB]) ? a[indexA++] : b[indexB++];
+        for (int i = 0; i < c.length; i++) {
+            if (indexA == a.length) c[i] = b[indexB++];
+            else if (indexB == b.length) c[i] = a[indexA++];
+            else if (a[indexA] < b[indexB]) c[i] = a[indexA++];
+            else c[i] = b[indexB++];
+        }
         return c;
     }
 
@@ -43,7 +47,6 @@ public class SortEx<T extends Comparable<T>> {
             }
             swap(a, i, minIndex);
         }
-
         return a;
     }
 
@@ -66,5 +69,16 @@ public class SortEx<T extends Comparable<T>> {
         }
         if (a[leftIndex].compareTo(sample) == 0) return leftIndex;
         throw new NoSuchElementException();
+    }
+
+    public int[] mergeSort(int[] a) {
+        if (a.length == 1) {
+            return a;
+        } else {
+            int middle = a.length / 2;
+            int[] b = Arrays.copyOfRange(a, 0, middle);
+            int[] c = Arrays.copyOfRange(a, middle, a.length);
+            return mergeArrays(mergeSort(b), mergeSort(c));
+        }
     }
 }

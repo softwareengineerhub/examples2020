@@ -2,7 +2,6 @@ package com.example;
 
 import org.junit.Test;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import static org.junit.Assert.*;

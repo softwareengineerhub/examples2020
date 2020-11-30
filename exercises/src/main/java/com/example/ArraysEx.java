@@ -11,7 +11,7 @@ public class ArraysEx {
             int j = i + 1;
             while (j < size) {
                 if (a[j] == a[i]) {
-                    for (int k = j; k < size - 1; k++) a[k] = a[k + 1];
+                    if (size - 1 - j >= 0) System.arraycopy(a, j + 1, a, j, size - 1 - j);
                     size--;
                 } else j++;
             }

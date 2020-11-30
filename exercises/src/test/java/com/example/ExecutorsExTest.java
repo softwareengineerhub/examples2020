@@ -11,8 +11,8 @@ public class ExecutorsExTest {
 
     public static final int SIZE = 1000000;
 
-    ExecutorsEx executorsEx = new ExecutorsEx();
-    ThreadLocalRandom random = ThreadLocalRandom.current();
+    final ExecutorsEx executorsEx = new ExecutorsEx();
+    final ThreadLocalRandom random = ThreadLocalRandom.current();
 
     @Test
     public void checkAddMachineRandom3() {

@@ -12,7 +12,7 @@ public class ArraysExTest {
 
     private static final int SIZE = 100;
     private static final int ITERATIONS = 100;
-    ArraysEx arraysEx = new ArraysEx();
+    final ArraysEx arraysEx = new ArraysEx();
 
     @Test
     public void deduplication() {
