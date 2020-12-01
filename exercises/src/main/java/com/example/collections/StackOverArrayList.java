@@ -1,4 +1,4 @@
-package com.example.stack;
+package com.example.collections;
 
 import java.util.ArrayList;
 import java.util.EmptyStackException;

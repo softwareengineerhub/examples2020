@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.stack.StackOverArrayList;
+import com.example.collections.StackOverArrayList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

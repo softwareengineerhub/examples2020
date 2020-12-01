@@ -1,8 +1,6 @@
-package com.example.stack;
+package com.example.collections;
 
-import java.util.List;
-
-public interface IStack<T> extends List<T> {
+public interface IStack<T>  {
     void push(T element);
 
     T pop();

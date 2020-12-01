@@ -1,8 +1,10 @@
-package com.example;
+package com.example.collections;
+
+import java.util.EmptyStackException;
 
 public class MyList<T> {
 
-    private static class Node<T> {
+    protected static class Node<T> {
         T element;
         Node<T> next;
 
@@ -41,6 +43,12 @@ public class MyList<T> {
         }
     }
 
+    public void addFirst(T element) {
+        Node<T> newNode = new Node<>(element);
+        if (first != null) newNode.next = first;
+        first = newNode;
+    }
+
     public boolean isEmpty() {
         return first == null;
     }
@@ -76,6 +84,14 @@ public class MyList<T> {
         return nodeIndex.element;
     }
 
+    public T removeFirst() {
+        if (first==null) throw new EmptyStackException();
+        T element = first.element;
+        first = first.next;
+        return element;
+    }
+
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -91,4 +107,5 @@ public class MyList<T> {
         }
         return sb.append("]").toString();
     }
+
 }

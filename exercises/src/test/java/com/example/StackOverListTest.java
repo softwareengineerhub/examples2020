@@ -1,17 +1,17 @@
 package com.example;
 
-import com.example.stack.StackOverLinkedList;
+import com.example.collections.StackOverMyList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class StackOverLinkedListTest {
+public class StackOverListTest {
 
     public static final int STACK_SIZE = 10;
 
     @Test
     public void checkPush() {
-        StackOverLinkedList<Integer> stack = new StackOverLinkedList<>();
+        StackOverMyList<Integer> stack = new StackOverMyList<>();
         assertEquals(stack.size(), 0);
         for (int i = 0; i < STACK_SIZE; i++) {
             stack.push(i);
@@ -21,7 +21,7 @@ public class StackOverLinkedListTest {
 
     @Test
     public void testPeek() {
-        StackOverLinkedList<Integer> stack = new StackOverLinkedList<>();
+        StackOverMyList<Integer> stack = new StackOverMyList<>();
         for (int i = 0; i < STACK_SIZE; i++) {
             stack.push(i);
             assertEquals((int) stack.peek(), i);
@@ -30,7 +30,7 @@ public class StackOverLinkedListTest {
 
     @Test
     public void testPop() {
-        StackOverLinkedList<Integer> stack = new StackOverLinkedList<>();
+        StackOverMyList<Integer> stack = new StackOverMyList<>();
         for (int i = 0; i < STACK_SIZE; i++)
             stack.push(i);
 

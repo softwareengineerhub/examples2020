@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.collections.MyList;
 import org.junit.Test;
 
 import java.util.stream.IntStream;
@@ -68,6 +69,18 @@ public class MyListTest {
         list.remove(10);
     }
 
+    @Test
+    public void checkAddFirst(){
+        MyList<Integer> list = new MyList<>();
+        for (int i = 0; i < 10; i++) list.addFirst(i);
+        assertEquals(list.toString(), "[9,8,7,6,5,4,3,2,1,0]");
+    }
 
+    @Test
+    public void checkPeek(){
+        MyList<Integer> list = new MyList<>();
+        for (int i = 0; i < 10; i++) list.addFirst(i);
+        assertEquals(list.toString(), "[9,8,7,6,5,4,3,2,1,0]");
+    }
 
 }
